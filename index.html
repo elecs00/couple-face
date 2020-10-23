@@ -102,7 +102,7 @@
             </div>
         </section>
         <h3 class="pb-2 d-flex justify-content-center">우리 커플은 어떤 커플관상일까?</h3>
-        
+
         <script
             class="jsbin"
             src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
@@ -124,7 +124,7 @@
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-                
+
                 <div id="loading" class="animated bounce">
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
@@ -222,37 +222,96 @@
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                 console.log(prediction[0].className);
-                var resultMessege
+                var resultTitle, resultExplain, resultCeleb;
                 switch (prediction[0].className) {
-                    case "친구같은커플":
-                        resultMessege = "친구같은커플"
+                    case '친구같은커플':
+                        resultTitle = '친구같은커플'
+                        resultExplain = '1'
+                        resultCeleb = '1'
                         break;
-                    case "힐링커플":
-                        resultMessege = "힐링커플"
+                    case '힐링커플':
+                        resultTitle = '힐링커플'
+                        resultExplain = '2'
+                        resultCeleb = '2'
                         break;
-                    case "티격태격커플":
-                        resultMessege = "티격태격커플"
+                    case '티격태격커플':
+                        resultTitle = '티격태격커플'
+                        resultExplain = '3'
+                        resultCeleb = '3'
                         break;
-                    case "위태위태커플":
-                        resultMessege = "위태위태커플"
-                        break;    
-                    case "불타는사랑커플":
-                        resultMessege = "불타는사랑"
+                    case '위태위태커플':
+                        resultTitle = '위태위태커플'
+                        resultExplain = '4'
+                        resultCeleb = '4'
                         break;
-                    case "잉꼬부부커플":
-                        resultMessege = "잉꼬부부커플"
-                        break;    
+                    case '불타는사랑커플':
+                        resultTitle = '불타는사랑'
+                        resultExplain = '5'
+                        resultCeleb = '5'
+                        break;
+                    case '잉꼬부부커플':
+                        resultTitle = '잉꼬부부커플'
+                        resultExplain = '6'
+                        resultCeleb = '6'
+                        break;
                     default:
-                        resultMessege = "알수없음"
+                        resultTitle = '알수없음'
+                        resultExplain = ''
+                        resultCeleb = ''
                 }
-                $('.result-message').html(resultMessege);
+                var title =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-animal-title'>" +
+                    resultTitle +
+                    '</div>';
+                var explain = "<div class='animal-explain pt-2'>" + resultExplain + '</div>';
+                var celeb =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-animal-celeb pt-2 pb-2'>" +
+                    resultCeleb +
+                    '</div>';
+                $('.result-message').html(title + explain + celeb);
+                var barWidth;
                 for (let i = 0; i < maxPredictions; i++) {
-                    const classPrediction =
-                        prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
-                    labelContainer.childNodes[i].innerHTML = classPrediction;
-                }
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case '친구같은커플':
+                            labelTitle = '친구같은커플'
+                            break;
+                        case '힐링커플':
+                            labelTitle = '힐링커플'
+                            break;
+                        case '티격태격커플':
+                            labelTitle = '티격태격커플'
+                            break;
+                        case '위태위태커플':
+                            labelTitle = '위태위태커플'
+                            break;
+                        case '불타는사랑커플':
+                            labelTitle = '불타는사랑커플'
+                            break;
+                        case '잉꼬부부커플':
+                            labelTitle = '잉꼬부부커플'
+                            break;
+                        default:
+                            labelTitle = '알수없음'
+                    }
+                    var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
             }
-        </script>
+        }
+    </script>
+    
     </body>
     <!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
