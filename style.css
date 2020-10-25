@@ -284,24 +284,8 @@ body {
   border-radius: 10px;
   background-color: rgba(72, 5, 155, 1);
 }
-.fox-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  width: 100%;
-  background-color: rgba(49, 132, 155, 0.2);
-}
-.fox-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  background-color: rgba(49, 132, 155, 1);
-}
-.불같은사랑커플-box {
+
+.불타는사랑커플-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -310,7 +294,7 @@ body {
   width: 100%;
   background-color: rgba(235, 166, 190, 0.2);
 }
-.불같은사랑커플-bar {
+.불타는사랑커플-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -339,10 +323,10 @@ body {
 .animal-explain {
     font-size: 1.5rem;
 }
-.dinosaur-animal-title {
+.잉꼬부부커플-animal-title {
     color: #3ba363;
 }
-.dinosaur-animal-celeb {
+.잉꼬부부커플-animal-celeb {
     color: #3ba363;
     font-size: 1.2rem;
 }

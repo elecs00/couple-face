@@ -226,7 +226,7 @@
                 switch (prediction[0].className) {
                     case '친구같은커플':
                         resultTitle = '친구같은커플'
-                        resultExplain = '1
+                        resultExplain = '1'
                         resultCeleb = '1'
                         break;
                     case '힐링커플':
@@ -235,29 +235,25 @@
                         resultCeleb = '2'
                         break;
                     case '티격태격커플':
-                        resultTitle = '티격태격커플'
+                        resultTitle = '격태격커플'
                         resultExplain = '3'
                         resultCeleb = '3'
                         break;
                     case '위태위태커플':
-                        resultTitle = '위태위태커플'
-                        resultExplain = '4'
-                        resultCeleb = '4'
+                        resultTitle = '선남선녀커플'
+                        resultExplain = ' 둘 다 눈동자의 흑과 백이 분명하고 밝고 깨끗하다. 이런 눈은 관상에서 마음이 예쁘고 진실되고 바른 사람으로 본다. 둘 다 눈처럼 예쁜 사랑, 진실된 사랑을 하게 될 것이다.코는 남자 여자 모두 돈을 상징하면서 여성에게는 남편도 해당된다. 둘 다 코가 반듯하고 잘 생겼다. 이런 코는 재벌로 살지는 못해도 풍요롭게 살수는 있어 경제적으로는 위험한 모험만 하지 않는다면 넉넉하고 여유로울 것이다.'
+                        resultCeleb = '다만, 관상책에 미인은 다른 사람보다 불행이 많이 생긴다는 말이 있다. 이 말을 마음에 새기면서, 신혼 초 5년을 잘 넘기면 좋겠다.'
                         break;
-                    case '불타는사랑커플':
-                        resultTitle = '불타는사랑'
-                        resultExplain = '5'
-                        resultCeleb = '5'
-                        break;
+                   
                     case '잉꼬부부커플':
                         resultTitle = '잉꼬부부커플'
                         resultExplain = '6'
                         resultCeleb = '6'
                         break;
                     default:
-                        resultTitle = '알수없음'
-                        resultExplain = ''
-                        resultCeleb = ''
+                        resultTitle = "선남선녀커플"
+                        resultExplain = " 둘 다 눈동자의 흑과 백이 분명하고 밝고 깨끗하다. 이런 눈은 관상에서 마음이 예쁘고 진실되고 바른 사람으로 본다. 둘 다 눈처럼 예쁜 사랑, 진실된 사랑을 하게 될 것이다.코는 남자 여자 모두 돈을 상징하면서 여성에게는 남편도 해당된다. 둘 다 코가 반듯하고 잘 생겼다. 이런 코는 재벌로 살지는 못해도 풍요롭게 살수는 있어 경제적으로는 위험한 모험만 하지 않는다면 넉넉하고 여유로울 것이다."
+                        resultCeleb = "다만, 관상책에 미인은 다른 사람보다 불행이 많이 생긴다는 말이 있다. 이 말을 마음에 새기면서, 신혼 초 5년을 잘 넘기면 좋겠다."
                 }
                 var title =
                     "<div class='" +
@@ -296,22 +292,30 @@
                         case '위태위태커플':
                             labelTitle = '위태위태커플'
                             break;
-                        case '불타는사랑커플':
-                            labelTitle = '불타는사랑커플'
-                            break;
                         case '잉꼬부부커플':
                             labelTitle = '잉꼬부부커플'
                             break;
                         default:
-                            labelTitle = '알수없음'
+                            labelTitle = '선남선녀커플' 
                     }
-                    var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
-                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
-                labelContainer.childNodes[i].innerHTML = label + bar;
+                    var label =
+                        "<div class='animal-label d-flex align-items-center'>" +
+                        labelTitle +
+                        '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
+                }
             }
-        }
-    </script>
-    
+        </script>
     </body>
     <!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
