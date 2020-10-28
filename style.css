@@ -323,13 +323,6 @@ body {
 .animal-explain {
     font-size: 1.5rem;
 }
-.잉꼬부부커플-animal-title {
-    color: #3ba363;
-}
-.잉꼬부부커플-animal-celeb {
-    color: #3ba363;
-    font-size: 1.2rem;
-}
 .티격태격커플-animal-title {
     color: #3ba363;
 }
@@ -337,10 +330,11 @@ body {
     color: #3ba363;
     font-size: 1.2rem;
 }
-.cat-animal-title {
+
+.위태위태커플-animal-title {
     color: #ff6c0a;
 }
-.cat-animal-celeb {
+.위태위태커플-celeb {
     color: #ff6c0a;
     font-size: 1.2rem;
 }
