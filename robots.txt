@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap:https://coupleface.netlify.app/sitemap.xml
