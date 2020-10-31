@@ -323,6 +323,13 @@ body {
 .animal-explain {
     font-size: 1.5rem;
 }
+.불타는사랑커플-animal-title {
+    color: #e56995;
+}
+.불타는사랑커플-animal-celeb {
+    color: #e56995;
+    font-size: 1.2rem;
+}
 .티격태격커플-animal-title {
     color: #3ba363;
 }
@@ -331,39 +338,39 @@ body {
     font-size: 1.2rem;
 }
 
+.유리잔커플-animal-title {
+    color: #ff6c0a;
+}
+.유리잔커플-animal-celeb {
+    color: #ff6c0a;
+    font-size: 1.2rem;
+}
+.힐링커플-animal-title {
+    color: #548dd4;
+}
+.힐링커플-animal-celeb {
+    color: #548dd4;
+    font-size: 1.2rem;
+}
+.잉꼬부부커플-animal-title {
+    color: #e56995;
+}
+.잉꼬부부커플-animal-celeb {
+    color: #e56995;
+    font-size: 1.2rem;
+}
 .위태위태커플-animal-title {
-    color: #ff6c0a;
+    color: #F4850E;
 }
-.위태위태커플-celeb {
-    color: #ff6c0a;
+.위태위태커플-animal-celeb {
+    color: #F4850E;
     font-size: 1.2rem;
 }
-.dog-animal-title {
-    color: #548dd4;
+.친구같은커플-animal-title {
+    color: #7D08B7;
 }
-.dog-animal-celeb {
-    color: #548dd4;
-    font-size: 1.2rem;
-}
-.rabbit-animal-title {
-    color: #e56995;
-}
-.rabbit-animal-celeb {
-    color: #e56995;
-    font-size: 1.2rem;
-}
-.bear-animal-title {
-    color: #9b6b43;
-}
-.bear-animal-celeb {
-    color: #9b6b43;
-    font-size: 1.2rem;
-}
-.fox-animal-title {
-    color: #31849b;
-}
-.fox-animal-celeb {
-    color: #31849b;
+.친구같은커플-animal-celeb {
+    color: #7D08B7;
     font-size: 1.2rem;
 }
 
